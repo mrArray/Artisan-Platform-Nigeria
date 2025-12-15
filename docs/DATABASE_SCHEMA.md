@@ -948,7 +948,7 @@ mysqldump -u root -p artisan_platform > backup_$(date +%Y%m%d_%H%M%S).sql
 ### Restore Command
 
 ```bash
-mysql -u root -p artisan_platform < backup_20240101_120000.sql
+mysql -u root -p artisan_platform < backup_20250101_120000.sql
 ```
 
 ### Incremental Backup
@@ -996,6 +996,6 @@ The schema is production-ready and can handle millions of records while maintain
 ---
 
 **Schema Version**: 1.0  
-**Last Updated**: December 2024  
+**Last Updated**: December 2025  
 **Database Engine**: MySQL 8.0+  
 **Character Set**: utf8mb4 (Unicode)

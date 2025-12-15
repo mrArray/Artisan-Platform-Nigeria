@@ -55,7 +55,7 @@ All responses follow a standard format:
   "success": true,
   "data": {},
   "message": "Operation successful",
-  "timestamp": "2024-01-15T10:30:00Z"
+  "timestamp": "2025-01-15T10:30:00Z"
 }
 ```
 
@@ -66,7 +66,7 @@ Error response:
   "success": false,
   "error": "Error code",
   "message": "Human-readable error message",
-  "timestamp": "2024-01-15T10:30:00Z"
+  "timestamp": "2025-01-15T10:30:00Z"
 }
 ```
 
@@ -359,7 +359,7 @@ Content-Type: application/json
   "duration": "2 weeks",
   "experience_level": "advanced",
   "required_skills": ["Plumbing"],
-  "deadline": "2024-02-15"
+  "deadline": "2025-02-15"
 }
 
 Response: 201 Created
@@ -372,7 +372,7 @@ Response: 201 Created
     "status": "open",
     "budget_min": 50000,
     "budget_max": 150000,
-    "posted_date": "2024-01-15T10:30:00Z"
+    "posted_date": "2025-01-15T10:30:00Z"
   }
 }
 ```
@@ -394,7 +394,7 @@ Response: 200 OK
     "budget_min": 50000,
     "budget_max": 150000,
     "status": "open",
-    "posted_date": "2024-01-15T10:30:00Z",
+    "posted_date": "2025-01-15T10:30:00Z",
     "employer": {
       "id": 1,
       "company_name": "ABC Construction",
@@ -486,7 +486,7 @@ Response: 201 Created
     "job_id": 1,
     "artisan_id": 1,
     "status": "pending",
-    "applied_date": "2024-01-15T10:30:00Z"
+    "applied_date": "2025-01-15T10:30:00Z"
   }
 }
 ```
@@ -506,7 +506,7 @@ Response: 200 OK
     "artisan_id": 1,
     "cover_letter": "I am interested...",
     "status": "pending",
-    "applied_date": "2024-01-15T10:30:00Z"
+    "applied_date": "2025-01-15T10:30:00Z"
   }
 }
 ```
@@ -526,7 +526,7 @@ Response: 200 OK
       "artisan_id": 1,
       "artisan_name": "John Doe",
       "status": "pending",
-      "applied_date": "2024-01-15T10:30:00Z"
+      "applied_date": "2025-01-15T10:30:00Z"
     }
   ],
   "pagination": {
@@ -578,7 +578,7 @@ Response: 201 Created
     "sender_id": 1,
     "recipient_id": 2,
     "subject": "Job Inquiry",
-    "sent_at": "2024-01-15T10:30:00Z"
+    "sent_at": "2025-01-15T10:30:00Z"
   }
 }
 ```
@@ -599,7 +599,7 @@ Response: 200 OK
       "sender_name": "Jane Doe",
       "subject": "Job Inquiry",
       "is_read": false,
-      "sent_at": "2024-01-15T10:30:00Z"
+      "sent_at": "2025-01-15T10:30:00Z"
     }
   ],
   "pagination": {
@@ -641,7 +641,7 @@ Response: 200 OK
       "title": "New Job Posted",
       "message": "A new job matching your skills...",
       "is_read": false,
-      "created_at": "2024-01-15T10:30:00Z"
+      "created_at": "2025-01-15T10:30:00Z"
     }
   ],
   "pagination": {
@@ -689,7 +689,7 @@ Response: 201 Created
     "reviewer_id": 1,
     "reviewed_user_id": 2,
     "rating": 5,
-    "created_at": "2024-01-15T10:30:00Z"
+    "created_at": "2025-01-15T10:30:00Z"
   }
 }
 ```
@@ -709,7 +709,7 @@ Response: 200 OK
       "reviewer_name": "John Doe",
       "rating": 5,
       "comment": "Excellent work...",
-      "created_at": "2024-01-15T10:30:00Z"
+      "created_at": "2025-01-15T10:30:00Z"
     }
   ],
   "pagination": {
@@ -922,5 +922,5 @@ application = client.applications.create(
 ---
 
 **API Version**: 1.0  
-**Last Updated**: December 2024  
+**Last Updated**: December 2025  
 **Status**: Planned for Future Release

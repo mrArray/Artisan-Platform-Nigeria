@@ -91,7 +91,7 @@ The platform uses 11 normalized tables:
 ## Project Structure
 
 ```
-/artisan-platform
+/Artisan-Platform-Nigeria
 ├── /config
 │   └── database.php              # Database configuration and connection
 ├── /auth
@@ -154,8 +154,8 @@ The platform uses 11 normalized tables:
 
 ```bash
 cd /var/www/html
-git clone <repository-url> artisan-platform
-cd artisan-platform
+git clone https://github.com/mrArray/Artisan-Platform-Nigeria
+cd Artisan-Platform-Nigeria
 ```
 
 ### Step 2: Create Database
@@ -167,7 +167,7 @@ mysql -u root -p
 # Create database and import schema
 CREATE DATABASE artisan_platform_db;
 USE artisan_platform_db;
-SOURCE /path/to/artisan-platform/database.sql;
+SOURCE /path/to/Artisan-Platform-Nigeria/database.sql;
 ```
 
 Or import via command line:
@@ -190,8 +190,8 @@ define('DB_NAME', 'artisan_platform_db');
 ### Step 4: Set File Permissions
 
 ```bash
-chmod -R 755 /artisan-platform
-chmod -R 777 /artisan-platform/uploads
+chmod -R 755 /Artisan-Platform-Nigeria
+chmod -R 777 /Artisan-Platform-Nigeria/uploads
 ```
 
 ### Step 5: Access the Application
@@ -201,7 +201,7 @@ chmod -R 777 /artisan-platform/uploads
 Open your browser and navigate to:
 
 ```
-http://localhost/artisan-platform
+http://localhost/Artisan-Platform-Nigeria
 ```
 
 #### Using PHP Built-in Server
@@ -309,7 +309,7 @@ Check database credentials in `/config/database.php` and ensure MySQL is running
 ### Permission Denied on Uploads
 
 ```bash
-chmod -R 777 /artisan-platform/uploads
+chmod -R 777 /Artisan-Platform-Nigeria/uploads
 ```
 
 ### Session Issues
@@ -405,5 +405,5 @@ For issues, questions, or suggestions, please contact:
 ---
 
 **Version**: 1.0.0  
-**Last Updated**: December 2024  
+**Last Updated**: December 2025  
 **Status**: Production Ready

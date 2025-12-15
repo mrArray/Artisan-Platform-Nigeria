@@ -482,7 +482,7 @@ CREATE INDEX idx_message_recipient ON messages(recipient_id);
 mysqldump -u root -p artisan_platform > backup_$(date +%Y%m%d_%H%M%S).sql
 
 # Restore database
-mysql -u root -p artisan_platform < backup_20240101_120000.sql
+mysql -u root -p artisan_platform < backup_20250101_120000.sql
 ```
 
 ### File Backup
@@ -492,7 +492,7 @@ mysql -u root -p artisan_platform < backup_20240101_120000.sql
 tar -czf artisan-platform_backup_$(date +%Y%m%d_%H%M%S).tar.gz /var/www/html/artisan-platform
 
 # Restore from backup
-tar -xzf artisan-platform_backup_20240101_120000.tar.gz -C /var/www/html
+tar -xzf artisan-platform_backup_20250101_120000.tar.gz -C /var/www/html
 ```
 
 ## Production Deployment
@@ -533,4 +533,4 @@ For additional help:
 
 ---
 
-**Last Updated**: December 2024
+**Last Updated**: December 2025
