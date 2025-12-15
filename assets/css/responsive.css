@@ -1,0 +1,534 @@
+/**
+ * Responsive CSS - Mobile and Tablet Optimizations
+ * 
+ * Additional responsive rules for better mobile experience
+ */
+
+/* ==================== Mobile Navigation ==================== */
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .nav-items {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 6px 10px;
+    }
+}
+
+/* ==================== Tablet Adjustments ==================== */
+
+@media (max-width: 768px) {
+    /* Header */
+    .header {
+        position: relative;
+    }
+
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Tables */
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px 10px;
+    }
+
+    /* Cards */
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    /* Jobs Grid */
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .job-card {
+        padding: 15px;
+    }
+
+    /* Dashboard */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Auth */
+    .auth-card {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Search Section */
+    .search-section {
+        padding: 20px;
+    }
+
+    .budget-inputs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .budget-inputs input {
+        width: 100%;
+    }
+}
+
+/* ==================== Small Devices (Phones) ==================== */
+
+@media (max-width: 480px) {
+    /* Base */
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        line-height: 1.5;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Header */
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar-menu {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 8px;
+        font-size: 0.9rem;
+        display: block;
+        width: 100%;
+    }
+
+    .nav-item-dropdown:hover .dropdown-menu {
+        position: static;
+        display: none;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: 20px 0;
+    }
+
+    /* Headings */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Forms */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="file"],
+    select,
+    textarea {
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    .btn-sm {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Cards */
+    .card,
+    .profile-section,
+    .info-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    /* Tables */
+    .table {
+        font-size: 0.8rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 6px 8px;
+    }
+
+    /* Jobs */
+    .jobs-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .job-card {
+        padding: 12px;
+    }
+
+    .job-header h3 {
+        font-size: 1rem;
+    }
+
+    .job-details {
+        font-size: 0.85rem;
+    }
+
+    .job-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .job-actions .btn {
+        width: 100%;
+        padding: 8px;
+    }
+
+    /* Dashboard */
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Auth */
+    .auth-container {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .auth-card {
+        max-width: 100%;
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .auth-card h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* Alerts */
+    .alert {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 0 15px;
+        margin-top: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section ul {
+        padding-left: 0;
+    }
+
+    /* Quick Actions */
+    .quick-actions {
+        padding: 15px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .action-buttons .btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    /* Search */
+    .search-section {
+        padding: 15px;
+    }
+
+    .search-form {
+        gap: 15px;
+    }
+
+    .budget-inputs {
+        flex-direction: column;
+    }
+
+    .budget-inputs input {
+        width: 100%;
+    }
+
+    /* Badges */
+    .badge {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+
+    /* Dropdowns */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        margin-top: 0;
+        background-color: #f9f9f9;
+        display: none;
+    }
+
+    .nav-item-dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .nav-item-dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+/* ==================== Extra Small Devices ==================== */
+
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .auth-card {
+        padding: 15px 12px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .job-card {
+        padding: 10px;
+    }
+
+    .table {
+        font-size: 0.75rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 4px 6px;
+    }
+}
+
+/* ==================== Print Styles ==================== */
+
+@media print {
+    .header,
+    .footer,
+    .navbar,
+    .btn,
+    .search-section {
+        display: none;
+    }
+
+    .main-content {
+        min-height: auto;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .card,
+    .profile-section,
+    .job-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==================== High DPI Screens ==================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize for retina displays */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* ==================== Landscape Mode ==================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-content {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .dashboard-header {
+        margin-bottom: 15px;
+    }
+
+    .stats-grid {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+}
+
+/* ==================== Dark Mode Support (Disabled) ==================== */
+
+/* Dark mode has been disabled to maintain light theme
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-color: #2d2d2d;
+        --dark-color: #f0f0f0;
+    }
+
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .header,
+    .card,
+    .profile-section,
+    .info-card,
+    .auth-card,
+    .search-section,
+    .job-card,
+    .table {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="file"],
+    select,
+    textarea {
+        background-color: #3a3a3a;
+        color: #e0e0e0;
+        border-color: #555;
+    }
+
+    .nav-link {
+        color: #e0e0e0;
+    }
+
+    .nav-link:hover {
+        background-color: #3a3a3a;
+    }
+
+    .table thead {
+        background-color: #3a3a3a;
+    }
+
+    .table th {
+        color: #e0e0e0;
+    }
+
+    .footer {
+        background-color: #1a1a1a;
+        border-top: 1px solid #3a3a3a;
+    }
+}
+*/
