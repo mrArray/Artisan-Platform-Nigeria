@@ -282,11 +282,11 @@ $csrfToken = generateCSRFToken();
 </div>
 
 <!-- Approve Modal -->
-<div id="approveModal" class="modal" style="display: none;">
-    <div class="modal-content">
+<div id="approveModal" class="modal-overlay" style="display: none !important;">
+    <div class="modal-content" onclick="event.stopPropagation();">
         <span class="close" onclick="closeModal('approveModal')">&times;</span>
         <h2>Approve Profile</h2>
-        <form method="POST">
+        <form method="POST" id="approveForm" onsubmit="return confirmApprove();">
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken); ?>">
             <input type="hidden" name="action" value="approve">
             <input type="hidden" name="verification_id" id="approveVerificationId">
@@ -297,7 +297,7 @@ $csrfToken = generateCSRFToken();
             </div>
             
             <div class="modal-actions">
-                <button type="submit" class="btn btn-success">Approve</button>
+                <button type="submit" class="btn btn-success">Confirm Approve</button>
                 <button type="button" class="btn btn-secondary" onclick="closeModal('approveModal')">Cancel</button>
             </div>
         </form>
@@ -305,11 +305,11 @@ $csrfToken = generateCSRFToken();
 </div>
 
 <!-- Reject Modal -->
-<div id="rejectModal" class="modal" style="display: none;">
-    <div class="modal-content">
+<div id="rejectModal" class="modal-overlay" style="display: none !important;">
+    <div class="modal-content" onclick="event.stopPropagation();">
         <span class="close" onclick="closeModal('rejectModal')">&times;</span>
         <h2>Reject Profile</h2>
-        <form method="POST">
+        <form method="POST" id="rejectForm" onsubmit="return confirmReject();">
             <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken); ?>">
             <input type="hidden" name="action" value="reject">
             <input type="hidden" name="verification_id" id="rejectVerificationId">
@@ -320,7 +320,7 @@ $csrfToken = generateCSRFToken();
             </div>
             
             <div class="modal-actions">
-                <button type="submit" class="btn btn-danger">Reject</button>
+                <button type="submit" class="btn btn-danger">Confirm Reject</button>
                 <button type="button" class="btn btn-secondary" onclick="closeModal('rejectModal')">Cancel</button>
             </div>
         </form>
@@ -373,7 +373,7 @@ $csrfToken = generateCSRFToken();
         white-space: nowrap;
     }
 
-    .modal {
+    .modal-overlay {
         position: fixed;
         z-index: 1000;
         left: 0;
@@ -381,9 +381,12 @@ $csrfToken = generateCSRFToken();
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .modal-overlay.modal-show {
+        display: flex !important;
     }
 
     .modal-content {
@@ -447,30 +450,79 @@ $csrfToken = generateCSRFToken();
 </style>
 
 <script>
+    // Ensure modals are hidden on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        var approveModal = document.getElementById('approveModal');
+        var rejectModal = document.getElementById('rejectModal');
+        
+        if (approveModal) {
+            approveModal.style.display = 'none';
+            approveModal.classList.remove('modal-show');
+        }
+        if (rejectModal) {
+            rejectModal.style.display = 'none';
+            rejectModal.classList.remove('modal-show');
+        }
+    });
+
     function showApproveForm(verificationId) {
+        var modal = document.getElementById('approveModal');
         document.getElementById('approveVerificationId').value = verificationId;
-        document.getElementById('approveModal').style.display = 'flex';
+        document.getElementById('approveComments').value = ''; // Clear previous comments
+        modal.classList.add('modal-show');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     function showRejectForm(verificationId) {
+        var modal = document.getElementById('rejectModal');
         document.getElementById('rejectVerificationId').value = verificationId;
-        document.getElementById('rejectModal').style.display = 'flex';
+        document.getElementById('rejectComments').value = ''; // Clear previous comments
+        modal.classList.add('modal-show');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
     }
 
     function closeModal(modalId) {
-        document.getElementById(modalId).style.display = 'none';
+        var modal = document.getElementById(modalId);
+        modal.classList.remove('modal-show');
+        setTimeout(function() {
+            modal.style.display = 'none';
+        }, 300);
+        document.body.style.overflow = ''; // Restore scrolling
     }
 
-    window.onclick = function(event) {
-        const approveModal = document.getElementById('approveModal');
-        const rejectModal = document.getElementById('rejectModal');
+    function confirmApprove() {
+        return confirm('Are you sure you want to approve this profile verification?');
+    }
+
+    function confirmReject() {
+        var comments = document.getElementById('rejectComments').value.trim();
+        if (!comments) {
+            alert('Please provide a reason for rejection.');
+            return false;
+        }
+        return confirm('Are you sure you want to reject this profile verification?');
+    }
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(event) {
+        var approveModal = document.getElementById('approveModal');
+        var rejectModal = document.getElementById('rejectModal');
+        
         if (event.target === approveModal) {
-            approveModal.style.display = 'none';
+            closeModal('approveModal');
         }
         if (event.target === rejectModal) {
-            rejectModal.style.display = 'none';
+            closeModal('rejectModal');
         }
-    }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' || event.keyCode === 27) {
+            closeModal('approveModal');
+            closeModal('rejectModal');
+        }
+    });
 </script>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
